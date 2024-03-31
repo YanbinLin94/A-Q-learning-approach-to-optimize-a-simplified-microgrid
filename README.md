@@ -4,7 +4,7 @@ This code provides a single Q learning agent to optimize a simplified microgrid 
 You can read the paper at this link: [Aggregating_Learning_Agents_for_Microgrid_Energy_Scheduling_During_Extreme_Weather_Events.pdf](https://github.com/YanbinLin94/A-single-Q-learning-agent-to-optimize-a-simplified-microgrid/files/14817710/Aggregating_Learning_Agents_for_Microgrid_Energy_Scheduling_During_Extreme_Weather_Events.pdf)
 
 
-
+## **Citation**
 This code is provided for academic training, supported by the NSF CyberTraining project. Algorithm explanation and simulation case studies are discussed in the lecture notes.
 If this code is used for any research purpose, please cite our PESGM’21 paper below.
 ```
@@ -20,3 +20,12 @@ If this code is used for any research purpose, please cite our PESGM’21 paper 
   doi={10.1109/PESGM46819.2021.9637949}}
 ```
 
+## **How to run**
+**This code requires:**
+
+•	MATLAB
+
+Clone the repository and run the code
+```
+# clone project
+git clone https://github.com/YanbinLin94/An-Imitation-Learning-Method-with-Multi-Virtual-Agents-for-Microgrid-Energy-Optimization.git

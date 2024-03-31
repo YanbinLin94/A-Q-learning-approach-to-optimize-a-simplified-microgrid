@@ -4,7 +4,7 @@ This code provides a single Q learning agent to optimize a simplified microgrid 
 
 This code is provided for academic training, supported by the NSF CyberTraining project. Algorithm explanation and simulation case studies are discussed in the lecture notes.
 If this code is used for any research purpose, please cite our PESGM’21 paper below.
-'''
+```
 @INPROCEEDINGS{9637949,
   author={Das, Avijit and Ni, Zhen and Zhong, Xiangnan},
   booktitle={2021 IEEE Power & Energy Society General Meeting (PESGM)}, 
@@ -15,5 +15,5 @@ If this code is used for any research purpose, please cite our PESGM’21 paper 
   pages={01-05},
   keywords={Schedules;Q-learning;Uncertainty;Processor scheduling;Decision making;Microgrids;Probabilistic logic;Microgrid energy scheduling;extreme weather events;energy optimization;reinforcement learning;aggregating knowledge},
   doi={10.1109/PESGM46819.2021.9637949}}
-'''
+```
 

@@ -3,33 +3,33 @@
 
 % Note 1: this code only provides a single Q learning agent to optimize a simplied microgrid (energy arbitrage) setup. The reference paper below described a recent work of aggregating multiple learning agents for microgrid energy optimization during the extreme weather events, which is more complicated than what you can observe from this code. 
 
-% Note 2: this code is provided for the academic training, supported by NSF CyberTraining project. Algorithm explanation and simulation case studies are discussed in the lecture notes.
+% Note 2: this code is provided for the academic training on June 8, 2021, supported by NSF CyberTraining project. Algorithm explanation and simulation case studies are discussed in the lecture notes.
 
-% If this code is used for any research purpose, please cite our PESGMí21 paper below.
-% A. Das, Z. Ni, and X. Zhong, ìAggregating Learning Agents for Microgrid Energy Scheduling During Extreme Weather Events,î in Proc. of IEEE Power & Energy Society General Meeting (PESGMí21), pp.1-5, Washington, DC, USA, Jul. 25-29, 2021. 
+% If this code is used for any research purpose, please cite our PESGM‚Äô21 paper below.
+% A. Das, Z. Ni, and X. Zhong, ‚ÄúAggregating Learning Agents for Microgrid Energy Scheduling During Extreme Weather Events,‚Äù in Proc. of IEEE Power & Energy Society General Meeting (PESGM‚Äô21), pp.1-5, Washington, DC, USA, Jul. 25-29, 2021. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-clc;
-clear all;
+clc
+clear all
 
 init %Initializing battery parameters
 
-N=2000; %soc discrete/defining number of battery states
+N=10; %soc discrete/defining number of battery states
 delta=(s_u-s_l)/N;
-states=s_l:delta:s_u;% 11 kinds of battery states
+states=s_l:delta:s_u;
 %%%%%%%%%%%%%%%%%%%Defining Q-table%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Each_cell = zeros(1,size(states,2));
-for tab_time = 1:K %K:max time step
+for tab_time = 1:K
     for tab_stat = 1:size(states,2)
         value_table{tab_stat,tab_time} = Each_cell;     
     end
 end
 %%%%%%%%%%%%%%%%%Defining Parameters%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-initial_pos = 5;% battery initial SOC position in the table
-gamma = 1;%discount factor
+initial_pos = 6;
+gamma = 1;
 
-Run = 50; %number of runs for calculating average
-iter = 4000; %maximun iteration number
+Run = 50;
+iter = 4000;
 epsilon = 0.6;
 
 lambda = -lambda; %grid price
@@ -45,10 +45,10 @@ for rr = 1:Run
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%    
     epsilon = 0.5;
     help_ep = 50; %It helps to decrease the probability of exploration
-    tic % calculate time
+    tic
 for i = 1:iter %Iteration loop begins
     
-    stateK0 = L0; %Defining initial state %initial SOC=0.5, so it should be changed
+    stateK0 = L0; %Defining initial state
     %alpha = a/(a+i-1);
     alpha = 0.05; %learning rate
     %%%%%%%%%%%%After every 50 iterations exproration prob. decreases %%%%
@@ -74,11 +74,9 @@ for i = 1:iter %Iteration loop begins
         %value_determin = value_table(:,time); 
         
         if rand < epsilon %%%%%%%%%%%%%%%Random action%%%%%%%%%%%%%%%%%
-        taking_action = help_assign(randi([1,size(help_assign,2)],1,1));% r = randi([-5,5],10,1),10,1 is the size; so 1,1 is size
-        %taking_action = help_assign(randi([1,size(help_assign,2)]));% without 1,1 is ok
-        h_pos = find(help_assign == taking_action);% find the action's index in help_assign
-        cost_cal = power(help_assign(h_pos))*lambda(time); %lamda is price; h_pos is necessary
-        %cost_cal = power(taking_action)*lambda(time); %cost= power_needed * price
+        taking_action = help_assign(randi([1,size(help_assign,2)],1,1));
+        h_pos = find(help_assign == taking_action);
+        cost_cal = power(help_assign(h_pos))*lambda(time); 
         optimized_cost = cost_cal;
         else
         %%%%%%%%%%%%%%%Greedy action%%%%%%%%%%%%%%%%%    
@@ -137,20 +135,18 @@ for jj=1:K
     corrspd_cost(jj) = pkQ(jj)*lambda(jj);
 end
 
-% figure
-% plot(plot_avg_cost)
-% xlabel('Iteration')
-% ylabel('Average Total Reward ($)')
-SOC=batt_pol(6) 
-fprintf('The SOC of time 6 is ',SOC,'\n') 
-cost=corrspd_cost(6)
-fprintf('Cooresponding cost of time 6 is ',cost,'\n')
-% figure
-% plot(batt_pol)
-% xlabel('Time (hours)')
-% ylabel('Battery SOC')
-% figure
-% bar(pkQ)
-% xlabel('Time (hours)')
-% ylabel('Battery Output (MW)')
+figure
+plot(plot_avg_cost)
+xlabel('Iteration')
+ylabel('Average Total Reward ($)')
+figure
+plot(batt_pol)
+xlabel('Time (hours)')
+ylabel('Battery SOC')
+figure
+bar(pkQ)
+xlabel('Time (hours)')
+ylabel('Battery Output (MW)')
+
+
 

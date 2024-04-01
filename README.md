@@ -28,4 +28,4 @@ If this code is used for any research purpose, please cite our PESGM’21 paper 
 Clone the repository and run the code
 ```
 # clone project
-git clone https://github.com/YanbinLin94/An-Imitation-Learning-Method-with-Multi-Virtual-Agents-for-Microgrid-Energy-Optimization.git
+git clone https://github.com/YanbinLin94/A-single-Q-learning-agent-to-optimize-a-simplified-microgrid.git

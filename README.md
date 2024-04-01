@@ -32,3 +32,23 @@ git clone https://github.com/YanbinLin94/A-single-Q-learning-agent-to-optimize-a
 # run the code
 run mainRL_v0_QTable.m
 ```
+
+## **Results**
+
+## Case Studies
+### Case 1: Change battery SOC discretization size and check how it affects the system 
+1. Try with N = 10, 100, and 1000
+2. Report results in figures (both cost curve and battery policy)
+   All cost curves should be in the same figure
+3. Investigate why it differs and try to find a conclusion 
+
+### Case 2: Change the battery capacity and efficiency, and check how it affects the system 
+1. For capacity, try 6 MWh with 1 MW maximum and 8 MWh with 2 MW maximum
+2. For efficiency, try 80% and 95%
+3. Report results in figures (both cost curve and battery policy)
+   All cost curves should be in the same figure
+4. Investigate why it differs and try to find a conclusion 
+
+### Case 3: How to use a trained Q-table for making decisions?
+For example, if you are at time 6, you know your current battery SOC as 0.9, how to use the trained Q-table to take the battery charging/discharging decision and calculate the corresponding cost.
+

@@ -29,3 +29,6 @@ Clone the repository and run the code
 ```
 # clone project
 git clone https://github.com/YanbinLin94/A-single-Q-learning-agent-to-optimize-a-simplified-microgrid.git
+# run the code
+run 
+```

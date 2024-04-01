@@ -34,6 +34,12 @@ run mainRL_v0_QTable.m
 ```
 
 ## **Results**
+![fig1](https://github.com/YanbinLin94/A-single-Q-learning-agent-to-optimize-a-simplified-microgrid/assets/97860537/db9ea7a0-c32c-47a2-b416-2c4f99d60abb)
+
+![fig2](https://github.com/YanbinLin94/A-single-Q-learning-agent-to-optimize-a-simplified-microgrid/assets/97860537/d4fa84b6-3e30-43da-85cc-99b445f1a858)
+
+![fig3](https://github.com/YanbinLin94/A-single-Q-learning-agent-to-optimize-a-simplified-microgrid/assets/97860537/bfe88fd6-d4a2-42d8-9b10-aece4960453b)
+
 
 ## Case Studies
 ### Case 1: Change battery SOC discretization size and check how it affects the system 

@@ -1,4 +1,4 @@
-# A Q learning approach to optimize a simplified microgrid
+# A Q learning approach to optimize a simplified microgrid (energy arbitrage) setup
 This code provides a Q learning approach to optimize a simplified microgrid (energy arbitrage) setup. This code contributes to the reference paper below, which describes a more complex setup of aggregating multiple learning agents for microgrid energy optimization during extreme weather events. 
 
 You can read the paper at this link: [Aggregating_Learning_Agents_for_Microgrid_Energy_Scheduling_During_Extreme_Weather_Events.pdf](https://github.com/YanbinLin94/A-single-Q-learning-agent-to-optimize-a-simplified-microgrid/files/14817710/Aggregating_Learning_Agents_for_Microgrid_Energy_Scheduling_During_Extreme_Weather_Events.pdf)

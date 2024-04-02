@@ -1,11 +1,11 @@
-# A-single-Q-learning-agent-to-optimize-a-simplified-microgrid
-This code provides a single Q learning agent to optimize a simplified microgrid (energy arbitrage) setup. The reference paper below describes a recent work of aggregating multiple learning agents for microgrid energy optimization during extreme weather events, which is more complicated than what you can observe from this code. 
+# A-Q-learning-approach-to-optimize-a-simplified-microgrid
+This code provides a Q learning approach to optimize a simplified microgrid (energy arbitrage) setup. This code contributes to the reference paper below, which describes a more complex setup of aggregating multiple learning agents for microgrid energy optimization during extreme weather events. 
 
 You can read the paper at this link: [Aggregating_Learning_Agents_for_Microgrid_Energy_Scheduling_During_Extreme_Weather_Events.pdf](https://github.com/YanbinLin94/A-single-Q-learning-agent-to-optimize-a-simplified-microgrid/files/14817710/Aggregating_Learning_Agents_for_Microgrid_Energy_Scheduling_During_Extreme_Weather_Events.pdf)
 
 
 ## **Citation**
-This code is provided for academic training, supported by the NSF CyberTraining project. Algorithm explanation and simulation case studies are discussed in the lecture notes.
+This code is provided for academic training, supported by the NSF CyberTraining project.
 If this code is used for any research purpose, please cite our PESGM’21 paper below.
 ```
 @INPROCEEDINGS{9637949,
